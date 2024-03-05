@@ -7,20 +7,26 @@ import (
 )
 
 func GetAllSnippets() []Snippet {
-	db := DB{}
-	getDb(&db)
+	db, err := getDb()
+	if err != nil {
+		return []Snippet{}
+	}
 	return db.Snippets
 }
 
 func GetAllLangs() []string {
-	db := DB{}
-	getDb(&db)
+	db, err := getDb()
+	if err != nil {
+		return []string{}
+	}
 	return db.Languages
 }
 
 func SaveSnippet(snippet Snippet) error {
-	db := DB{}
-	getDb(&db)
+	db, err := getDb()
+	if err != nil {
+		return err
+	}
 	lengthOfSnippetsList := len(db.Snippets)
 	snippet.Id = lengthOfSnippetsList
 	db.Snippets = append(db.Snippets, snippet)
@@ -39,9 +45,10 @@ func SaveSnippet(snippet Snippet) error {
 }
 
 func updateLangs() error {
-	db := DB{}
-	getDb(&db)
-
+	db, err := getDb()
+	if err != nil {
+		return err
+	}
 	newLangMap := make(map[string]int)
 	newLangsList := make([]string, 0)
 	for _, val := range db.Snippets {
@@ -65,10 +72,10 @@ func updateLangs() error {
 }
 
 func DeleteSnippet(strid string) error {
-	db := DB{}
-	getDb(&db)
-
-	// remove id
+	db, err := getDb()
+	if err != nil {
+		return err
+	}
 	id, err := strconv.Atoi(strid)
 	if err != nil {
 		return err
@@ -92,8 +99,10 @@ func DeleteSnippet(strid string) error {
 }
 
 func GetSnippet(id string) (Snippet, error) {
-	db := DB{}
-	getDb(&db)
+	db, err := getDb()
+	if err != nil {
+		return Snippet{}, err
+	}
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
 		return Snippet{}, err
@@ -105,8 +114,10 @@ func GetSnippet(id string) (Snippet, error) {
 }
 
 func EditSnippet(id string, snippet Snippet) error {
-	db := DB{}
-	getDb(&db)
+	db, err := getDb()
+	if err != nil {
+		return err
+	}
 	idInt, err := strconv.Atoi(id)
 	if err != nil {
 		return err

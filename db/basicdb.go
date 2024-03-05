@@ -21,15 +21,16 @@ func dbRead(filename string) ([]byte, error) {
 	return file, nil
 }
 
-func getDb(location *DB) error {
+func getDb() (DB, error) {
+	db := DB{}
 	file, err := dbRead("./db.json")
 	if err != nil {
-		return err
+		return db, err
 	}
 
-	err = json.Unmarshal(file, &location)
+	err = json.Unmarshal(file, &db)
 	if err != nil {
-		return err
+		return db, err
 	}
-	return nil
+	return db, nil
 }
