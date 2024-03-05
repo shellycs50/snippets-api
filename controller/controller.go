@@ -25,6 +25,7 @@ func PostSnippet(c *gin.Context) {
 		return
 	}
 	snippet.UploadDateTime = time.Now()
+	snippet.Deleted = 0
 
 	if err != nil {
 		ErrorResponse(err, c)
@@ -45,4 +46,40 @@ func GetAllSnippets(c *gin.Context) {
 func GetAllLangs(c *gin.Context) {
 	langs := db.GetAllLangs()
 	c.JSON(http.StatusOK, langs)
+}
+
+func DeleteSnippet(c *gin.Context) {
+	id := c.Param("id")
+	err := db.DeleteSnippet(id)
+	if err != nil {
+		ErrorResponse(err, c)
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Snippet deleted successfully",
+	})
+}
+
+func GetSnippet(c *gin.Context) {
+	id := c.Param("id")
+	snippet, err := db.GetSnippet(id)
+	if err != nil {
+		ErrorResponse(err, c)
+	}
+	c.JSON(http.StatusOK, snippet)
+}
+
+func EditSnippet(c *gin.Context) {
+	id := c.Param("id")
+	var snippet db.Snippet
+	err := c.BindJSON(&snippet)
+	if err != nil {
+		ErrorResponse(err, c)
+	}
+	err = db.EditSnippet(id, snippet)
+	if err != nil {
+		ErrorResponse(err, c)
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Snippet edited successfully",
+	})
 }

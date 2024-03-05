@@ -4,35 +4,52 @@
             "name": "header tag",
             "content": "\u003ch1\u003eHello, World\u003ch1\u003e",
             "language": "html",
-            "uploadDateTime": "2024-03-04T18:23:06.184599Z"
+            "uploadDateTime": "2024-03-04T18:23:06.184599Z",
+            "deleted": 0,
+            "id": 0
         },
         {
             "name": "for loop",
             "content": "for index, value := range variable {do stuff}",
             "language": "Go",
-            "uploadDateTime": "2024-03-04T18:24:40.0545304Z"
+            "uploadDateTime": "2024-03-04T18:24:40.0545304Z",
+            "deleted": 0,
+            "id": 1
         },
         {
             "name": "for loop",
             "content": "iterableVariable.forEach(function (anyparamnameforcallback){do stuff})",
             "language": "Javascript",
-            "uploadDateTime": "2024-03-04T18:29:14.55909Z"
+            "uploadDateTime": "2024-03-04T18:29:14.55909Z",
+            "deleted": 0,
+            "id": 2
         },
         {
             "name": "for in loop",
             "content": "for const key in variablename {do stuff with variablename[key] (value) or key}",
             "language": "Javascript",
-            "uploadDateTime": "2024-03-04T22:58:21.6731644Z"
+            "uploadDateTime": "2024-03-04T22:58:21.6731644Z",
+            "deleted": 0,
+            "id": 3
         },
         {
             "name": ".map usage",
             "content": "newthing = array.map(function (item) {item * 2})",
             "language": "Javascript",
-            "uploadDateTime": "2024-03-04T23:00:03.8561627Z"
+            "uploadDateTime": "2024-03-04T23:00:03.8561627Z",
+            "deleted": 0,
+            "id": 4
+        },
+        {
+            "name": "map usage",
+            "content": "varname := make(map[keytype]valuetype)\n varname[key] = value \n note maps aren't ordered.",
+            "language": "Go",
+            "uploadDateTime": "2024-03-05T12:47:30.9823623Z",
+            "deleted": 0,
+            "id": 5
         }
     ],
     "languages": [
-        "",
         "html",
         "Go",
         "Javascript"

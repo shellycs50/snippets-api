@@ -9,6 +9,8 @@ type Snippet struct {
 	Content        string    `json:"content"`
 	Language       string    `json:"language"`
 	UploadDateTime time.Time `json:"uploadDateTime"`
+	Deleted        int8      `json:"deleted"`
+	Id             int       `json:"id"`
 }
 
 type DB struct {
