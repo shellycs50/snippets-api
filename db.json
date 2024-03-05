@@ -1,0 +1,40 @@
+{
+    "snippets": [
+        {
+            "name": "header tag",
+            "content": "\u003ch1\u003eHello, World\u003ch1\u003e",
+            "language": "html",
+            "uploadDateTime": "2024-03-04T18:23:06.184599Z"
+        },
+        {
+            "name": "for loop",
+            "content": "for index, value := range variable {do stuff}",
+            "language": "Go",
+            "uploadDateTime": "2024-03-04T18:24:40.0545304Z"
+        },
+        {
+            "name": "for loop",
+            "content": "iterableVariable.forEach(function (anyparamnameforcallback){do stuff})",
+            "language": "Javascript",
+            "uploadDateTime": "2024-03-04T18:29:14.55909Z"
+        },
+        {
+            "name": "for in loop",
+            "content": "for const key in variablename {do stuff with variablename[key] (value) or key}",
+            "language": "Javascript",
+            "uploadDateTime": "2024-03-04T22:58:21.6731644Z"
+        },
+        {
+            "name": ".map usage",
+            "content": "newthing = array.map(function (item) {item * 2})",
+            "language": "Javascript",
+            "uploadDateTime": "2024-03-04T23:00:03.8561627Z"
+        }
+    ],
+    "languages": [
+        "",
+        "html",
+        "Go",
+        "Javascript"
+    ]
+}
