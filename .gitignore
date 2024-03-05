@@ -1,1 +1,5 @@
-snippetsapi.exe
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
